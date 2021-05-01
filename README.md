@@ -18,7 +18,7 @@ Example: Excel
 git diif
 ![git diff](https://raw.githubusercontent.com/tiibun/py-xlsx-textconv/main/diff.png)
 
-## This do not compare
+## This does not compare
 
 - Style
 - Auto Shapes
