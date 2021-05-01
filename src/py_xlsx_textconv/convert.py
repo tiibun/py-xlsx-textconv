@@ -1,6 +1,5 @@
 import warnings
 import openpyxl
-import re
 import sys
 
 # force LF on Windows
@@ -15,7 +14,7 @@ stdout = open(sys.__stdout__.fileno(),
 def output(values: any):
     print(values, file=stdout)
 
-def run(filename):
+def convert(filename):
     warnings.simplefilter('ignore')
     workbook = openpyxl.open(filename, read_only=True, data_only=True)
     for ws in workbook:
