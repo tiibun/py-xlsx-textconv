@@ -11,8 +11,10 @@ stdout = open(sys.__stdout__.fileno(),
               newline='\n',
               closefd=False)
 
+
 def output(values: any):
     print(values, file=stdout)
+
 
 def convert(filename):
     warnings.simplefilter('ignore')
@@ -31,6 +33,8 @@ def convert(filename):
                 else:
                     value = str(value)
                 values.append(value)
+
+            values = rstrip_empty(values)
             text = '\t'.join(values)
             output(text)
             has_rows = True
@@ -38,3 +42,10 @@ def convert(filename):
             # print only sheet name
             output(ws_name)
     workbook.close()
+
+
+def rstrip_empty(list: list):
+    i = len(list)
+    while i > 0 and list[i - 1] == '':
+        i -= 1
+    return list[:i]
