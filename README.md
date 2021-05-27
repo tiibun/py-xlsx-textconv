@@ -32,7 +32,7 @@ pip install py-xlsx-textconv
 
 ## Configuration
 
-If `~/.config/git/attributes` does not exist, you need to creat and edit it.
+If `~/.config/git/attributes` (Windows: %HOMEPATH%\.config\git\attributes) does not exist, you need to creat and edit it.
 
 ```:~/.config/git/attributes
 .xlsx diff=xlsx
@@ -41,7 +41,7 @@ If `~/.config/git/attributes` does not exist, you need to creat and edit it.
 
 Or if you prefered per project attribute file, create `.gitattributes` file and edit it above
 
-Append to `~/.gitconfig`.
+Append to `~/.gitconfig` (Windows: %HOMEPATH%\.gitconfig).
 
 ```:~/.gitconfig
 [diff "xlsx"]
