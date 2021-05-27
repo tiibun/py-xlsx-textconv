@@ -12,10 +12,10 @@ When git diff or git log -p, extract cell values in excel and format:
 
 and compare text formats.
 
-Example: Excel
+Example: Excel  
 ![excel](https://raw.githubusercontent.com/tiibun/py-xlsx-textconv/main/excel.png)
 
-git diif
+git diff  
 ![git diff](https://raw.githubusercontent.com/tiibun/py-xlsx-textconv/main/diff.png)
 
 ## This does not compare
