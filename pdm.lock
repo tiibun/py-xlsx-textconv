@@ -47,6 +47,12 @@ requires_python = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
 summary = "Cross-platform colored terminal text."
 
 [[package]]
+name = "colorclass"
+version = "2.2.2"
+requires_python = ">=2.6"
+summary = "Colorful worry-free console applications for Linux, Mac OS X, and Windows."
+
+[[package]]
 name = "cryptography"
 version = "36.0.2"
 requires_python = ">=3.6"
@@ -65,6 +71,11 @@ name = "docutils"
 version = "0.18.1"
 requires_python = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
 summary = "Docutils -- Python Documentation Utilities"
+
+[[package]]
+name = "easygui"
+version = "0.98.3"
+summary = "EasyGUI is a module for very simple, very easy GUI programming in Python.  EasyGUI is different from other GUI generators in that EasyGUI is NOT event-driven.  Instead, all GUI interactions are invoked by simple function calls."
 
 [[package]]
 name = "et-xmlfile"
@@ -127,6 +138,35 @@ dependencies = [
 ]
 
 [[package]]
+name = "msoffcrypto-tool"
+version = "5.0.0"
+requires_python = ">=3.6,<4.0"
+summary = "Python tool and library for decrypting MS Office files with passwords or other keys"
+dependencies = [
+    "cryptography>=2.3",
+    "olefile>=0.45",
+]
+
+[[package]]
+name = "olefile"
+version = "0.46"
+requires_python = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
+summary = "Python package to parse, read and write Microsoft OLE2 files (Structured Storage or Compound Document, Microsoft Office)"
+
+[[package]]
+name = "oletools"
+version = "0.60"
+summary = "Python tools to analyze security characteristics of MS Office and OLE files (also called Structured Storage, Compound File Binary Format or Compound Document File Format), for Malware Analysis and Incident Response #DFIR"
+dependencies = [
+    "colorclass",
+    "easygui",
+    "msoffcrypto-tool; platform_python_implementation != \"PyPy\" or (python_version >= \"3\" and platform_system != \"Windows\" and platform_system != \"Darwin\")",
+    "olefile>=0.46",
+    "pcodedmp>=1.2.5",
+    "pyparsing<3,>=2.1.0",
+]
+
+[[package]]
 name = "openpyxl"
 version = "3.0.9"
 requires_python = ">=3.6"
@@ -142,6 +182,15 @@ requires_python = ">=3.6"
 summary = "Core utilities for Python packages"
 dependencies = [
     "pyparsing!=3.0.5,>=2.0.2",
+]
+
+[[package]]
+name = "pcodedmp"
+version = "1.2.6"
+summary = "A VBA p-code disassembler"
+dependencies = [
+    "oletools>=0.54",
+    "win-unicode-console; platform_system == \"Windows\" and platform_python_implementation != \"PyPy\"",
 ]
 
 [[package]]
@@ -184,8 +233,8 @@ summary = "Pygments is a syntax highlighting package written in Python."
 
 [[package]]
 name = "pyparsing"
-version = "3.0.7"
-requires_python = ">=3.6"
+version = "2.4.7"
+requires_python = ">=2.6, !=3.0.*, !=3.1.*, !=3.2.*"
 summary = "Python parsing module"
 
 [[package]]
@@ -361,6 +410,11 @@ version = "0.5.1"
 summary = "Character encoding aliases for legacy web content"
 
 [[package]]
+name = "win-unicode-console"
+version = "0.5"
+summary = "Enable Unicode input and display when running Python from Windows console."
+
+[[package]]
 name = "yapf"
 version = "0.32.0"
 summary = "A formatter for Python code."
@@ -373,7 +427,7 @@ summary = "Backport of pathlib-compatible object wrapper for zip files"
 
 [metadata]
 lock_version = "3.1"
-content_hash = "sha256:708d9c76df843fb85739447280d7d67e09933259df8e842f5599aafdf665abd8"
+content_hash = "sha256:271606f3d48e75c3dc49a01c8389867b507104394fb211562152bcde63773169"
 
 [metadata.files]
 "atomicwrites 1.4.0" = [
@@ -452,6 +506,10 @@ content_hash = "sha256:708d9c76df843fb85739447280d7d67e09933259df8e842f5599aafdf
     {file = "colorama-0.4.4-py2.py3-none-any.whl", hash = "sha256:9f47eda37229f68eee03b24b9748937c7dc3868f906e8ba69fbcbdd3bc5dc3e2"},
     {file = "colorama-0.4.4.tar.gz", hash = "sha256:5941b2b48a20143d2267e95b1c2a7603ce057ee39fd88e7329b0c292aa16869b"},
 ]
+"colorclass 2.2.2" = [
+    {file = "colorclass-2.2.2-py2.py3-none-any.whl", hash = "sha256:6f10c273a0ef7a1150b1120b6095cbdd68e5cf36dfd5d0fc957a2500bbf99a55"},
+    {file = "colorclass-2.2.2.tar.gz", hash = "sha256:6d4fe287766166a98ca7bc6f6312daf04a0481b1eda43e7173484051c0ab4366"},
+]
 "cryptography 36.0.2" = [
     {file = "cryptography-36.0.2-cp36-abi3-macosx_10_10_universal2.whl", hash = "sha256:4e2dddd38a5ba733be6a025a1475a9f45e4e41139d1321f412c6b360b19070b6"},
     {file = "cryptography-36.0.2-cp36-abi3-macosx_10_10_x86_64.whl", hash = "sha256:4881d09298cd0b669bb15b9cfe6166f16fc1277b4ed0d04a22f3d6430cb30f1d"},
@@ -481,6 +539,10 @@ content_hash = "sha256:708d9c76df843fb85739447280d7d67e09933259df8e842f5599aafdf
 "docutils 0.18.1" = [
     {file = "docutils-0.18.1-py2.py3-none-any.whl", hash = "sha256:23010f129180089fbcd3bc08cfefccb3b890b0050e1ca00c867036e9d161b98c"},
     {file = "docutils-0.18.1.tar.gz", hash = "sha256:679987caf361a7539d76e584cbeddc311e3aee937877c87346f31debc63e9d06"},
+]
+"easygui 0.98.3" = [
+    {file = "easygui-0.98.3-py2.py3-none-any.whl", hash = "sha256:33498710c68b5376b459cd3fc48d1d1f33822139eb3ed01defbc0528326da3ba"},
+    {file = "easygui-0.98.3.tar.gz", hash = "sha256:d653ff79ee1f42f63b5a090f2f98ce02335d86ad8963b3ce2661805cafe99a04"},
 ]
 "et-xmlfile 1.1.0" = [
     {file = "et_xmlfile-1.1.0-py3-none-any.whl", hash = "sha256:a2ba85d1d6a74ef63837eed693bcb89c3f752169b0e3e7ae5b16ca5e1b3deada"},
@@ -514,6 +576,17 @@ content_hash = "sha256:708d9c76df843fb85739447280d7d67e09933259df8e842f5599aafdf
     {file = "keyring-23.4.1-py3-none-any.whl", hash = "sha256:17e49fb0d6883c2b4445359434dba95aad84aabb29bbff044ad0ed7100232eca"},
     {file = "keyring-23.4.1.tar.gz", hash = "sha256:89cbd74d4683ed164c8082fb38619341097741323b3786905c6dac04d6915a55"},
 ]
+"msoffcrypto-tool 5.0.0" = [
+    {file = "msoffcrypto_tool-5.0.0-py3-none-any.whl", hash = "sha256:4fe95a7a4525d6261ff7373a2027b97308ec2302a40a6718b34dffbc738c00c9"},
+    {file = "msoffcrypto-tool-5.0.0.tar.gz", hash = "sha256:34cbdb3efe62d9ca08aa59aadb1dc7d46a8ec2fb4befb89807f2d3c00b9c3ede"},
+]
+"olefile 0.46" = [
+    {file = "olefile-0.46.zip", hash = "sha256:133b031eaf8fd2c9399b78b8bc5b8fcbe4c31e85295749bb17a87cba8f3c3964"},
+]
+"oletools 0.60" = [
+    {file = "oletools-0.60-py2.py3-none-any.whl", hash = "sha256:bad54d3ced34f3475a5bffc0122f8481c66c3f3e09ad946dbda6ec80b75f72cb"},
+    {file = "oletools-0.60.zip", hash = "sha256:dfad0328ac83b4f8db9f47e706cbd64db739ae4ebf9d98b2dcc465728a35f4a6"},
+]
 "openpyxl 3.0.9" = [
     {file = "openpyxl-3.0.9-py2.py3-none-any.whl", hash = "sha256:8f3b11bd896a95468a4ab162fc4fcd260d46157155d1f8bfaabb99d88cfcf79f"},
     {file = "openpyxl-3.0.9.tar.gz", hash = "sha256:40f568b9829bf9e446acfffce30250ac1fa39035124d55fc024025c41481c90f"},
@@ -521,6 +594,10 @@ content_hash = "sha256:708d9c76df843fb85739447280d7d67e09933259df8e842f5599aafdf
 "packaging 21.3" = [
     {file = "packaging-21.3-py3-none-any.whl", hash = "sha256:ef103e05f519cdc783ae24ea4e2e0f508a9c99b2d4969652eed6a2e1ea5bd522"},
     {file = "packaging-21.3.tar.gz", hash = "sha256:dd47c42927d89ab911e606518907cc2d3a1f38bbd026385970643f9c5b8ecfeb"},
+]
+"pcodedmp 1.2.6" = [
+    {file = "pcodedmp-1.2.6-py2.py3-none-any.whl", hash = "sha256:4441f7c0ab4cbda27bd4668db3b14f36261d86e5059ce06c0828602cbe1c4278"},
+    {file = "pcodedmp-1.2.6.tar.gz", hash = "sha256:025f8c809a126f45a082ffa820893e6a8d990d9d7ddb68694b5a9f0a6dbcd955"},
 ]
 "pkginfo 1.8.2" = [
     {file = "pkginfo-1.8.2-py2.py3-none-any.whl", hash = "sha256:c24c487c6a7f72c66e816ab1796b96ac6c3d14d49338293d2141664330b55ffc"},
@@ -546,9 +623,9 @@ content_hash = "sha256:708d9c76df843fb85739447280d7d67e09933259df8e842f5599aafdf
     {file = "Pygments-2.11.2-py3-none-any.whl", hash = "sha256:44238f1b60a76d78fc8ca0528ee429702aae011c265fe6a8dd8b63049ae41c65"},
     {file = "Pygments-2.11.2.tar.gz", hash = "sha256:4e426f72023d88d03b2fa258de560726ce890ff3b630f88c21cbb8b2503b8c6a"},
 ]
-"pyparsing 3.0.7" = [
-    {file = "pyparsing-3.0.7-py3-none-any.whl", hash = "sha256:a6c06a88f252e6c322f65faf8f418b16213b51bdfaece0524c1c1bc30c63c484"},
-    {file = "pyparsing-3.0.7.tar.gz", hash = "sha256:18ee9022775d270c55187733956460083db60b37d0d0fb357445f3094eed3eea"},
+"pyparsing 2.4.7" = [
+    {file = "pyparsing-2.4.7-py2.py3-none-any.whl", hash = "sha256:ef9d7589ef3c200abe66653d3f1ab1033c3c419ae9b9bdb1240a85b024efc88b"},
+    {file = "pyparsing-2.4.7.tar.gz", hash = "sha256:c203ec8783bf771a155b207279b9bccb8dea02d8f0c9e5f8ead507bc3246ecc1"},
 ]
 "pytest 7.0.1" = [
     {file = "pytest-7.0.1-py3-none-any.whl", hash = "sha256:9ce3ff477af913ecf6321fe337b93a2c0dcf2a0a1439c43f5452112c1e4280db"},
@@ -621,6 +698,9 @@ content_hash = "sha256:708d9c76df843fb85739447280d7d67e09933259df8e842f5599aafdf
 "webencodings 0.5.1" = [
     {file = "webencodings-0.5.1-py2.py3-none-any.whl", hash = "sha256:a0af1213f3c2226497a97e2b3aa01a7e4bee4f403f95be16fc9acd2947514a78"},
     {file = "webencodings-0.5.1.tar.gz", hash = "sha256:b36a1c245f2d304965eb4e0a82848379241dc04b865afcc4aab16748587e1923"},
+]
+"win-unicode-console 0.5" = [
+    {file = "win_unicode_console-0.5.zip", hash = "sha256:d4142d4d56d46f449d6f00536a73625a871cba040f0bc1a2e305a04578f07d1e"},
 ]
 "yapf 0.32.0" = [
     {file = "yapf-0.32.0-py2.py3-none-any.whl", hash = "sha256:8fea849025584e486fd06d6ba2bed717f396080fd3cc236ba10cb97c4c51cf32"},

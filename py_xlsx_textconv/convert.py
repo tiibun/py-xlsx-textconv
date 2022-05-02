@@ -1,19 +1,8 @@
 import warnings
 import openpyxl
-import sys
 
-# force LF on Windows
-stdout = open(sys.__stdout__.fileno(),
-              mode=sys.__stdout__.mode,
-              buffering=1,
-              encoding=sys.__stdout__.encoding,
-              errors=sys.__stdout__.errors,
-              newline='\n',
-              closefd=False)
-
-
-def output(values: any):
-    print(values, file=stdout)
+from py_xlsx_textconv.output import output
+from .parse_macro import parse_macro
 
 
 def convert(filename):
@@ -42,6 +31,7 @@ def convert(filename):
             # print only sheet name
             output(ws_name)
     workbook.close()
+    parse_macro(filename)
 
 
 def rstrip_empty(list: list):

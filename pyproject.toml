@@ -20,6 +20,7 @@ classifiers = [
 ]
 dependencies = [
     "openpyxl==3.0.*",
+    "oletools>=0.60",
 ]
 dynamic = [
     "version"
@@ -54,3 +55,7 @@ dev = [
     "yapf>=0.32.0",
     "tox-pdm>=0.3.1"
 ]
+
+[tool.pdm.scripts]
+lint = "yapf -i -r py_xlsx_textconv"
+test = "tox"
