@@ -1,6 +1,56 @@
-[build-system]
-requires = [
-    "setuptools>=42",
-    "wheel"
+[project]
+name = "py-xlsx-textconv"
+description = "Git textconv tool for excel"
+readme = "README.md"
+requires-python = ">=3.6"
+license = {file = "LICENSE"}
+authors = [
+    {name = "IIBUN Toshiyuki", email = "toshiyuki.iibun@gmail.com"}
 ]
-build-backend = "setuptools.build_meta"
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.6",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent"
+]
+dependencies = [
+    "openpyxl==3.0.*",
+]
+dynamic = [
+    "version"
+]
+
+[project.urls]
+Repository = "https://github.com/tiibun/py-xlsx-textconv"
+
+[project.optional-dependencies]
+test = [
+    "pytest",
+    "twine",
+    "tox",
+    "yapf",
+    "tox-pdm"
+]
+
+
+[build-system]
+requires = ["pdm-pep517"]
+build-backend = "pdm.pep517.api"
+
+[tool]
+[tool.pdm]
+version = {from = "py_xlsx_textconv/__init__.py"}
+
+[tool.pdm.dev-dependencies]
+dev = [
+    "pytest>=7.0.1",
+    "twine>=3.8.0",
+    "tox>=3.25.0",
+    "yapf>=0.32.0",
+    "tox-pdm>=0.3.1"
+]
