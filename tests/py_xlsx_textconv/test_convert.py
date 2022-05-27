@@ -5,7 +5,7 @@ from py_xlsx_textconv.convert import convert
 
 
 def test_convert():
-    with patch('py_xlsx_textconv.convert.stdout',
+    with patch('py_xlsx_textconv.output.stdout',
                new_callable=StringIO) as mock_stdout:
         convert(join(dirname(__file__), '..', 'test.xlsx'))
         assert mock_stdout.getvalue() == '''[Sheet1]\tA1\tB1

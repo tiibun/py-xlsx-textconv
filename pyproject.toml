@@ -20,7 +20,7 @@ classifiers = [
 ]
 dependencies = [
     "openpyxl==3.0.*",
-    "oletools>=0.60",
+    "oletools==0.60",
 ]
 dynamic = [
     "version"
@@ -28,6 +28,9 @@ dynamic = [
 
 [project.urls]
 Repository = "https://github.com/tiibun/py-xlsx-textconv"
+
+[project.scripts]
+py-xlsx-textconv = "py_xlsx_textconv.__main__:main"
 
 [project.optional-dependencies]
 test = [
@@ -58,4 +61,12 @@ dev = [
 
 [tool.pdm.scripts]
 lint = "yapf -i -r py_xlsx_textconv"
-test = "tox"
+test = "pytest"
+tox = "tox"
+
+[tool.pytest.ini_options]
+minversion = "6.0"
+addopts = "-ra -q"
+testpaths = [
+    "tests",
+]
