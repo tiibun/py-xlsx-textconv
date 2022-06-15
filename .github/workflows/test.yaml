@@ -20,7 +20,7 @@ jobs:
           pdm sync -d
       - name: Run Tests
         run: |
-          pdm run -v tox
+          pdm run -v test
 
       - name: Upload pytest test results
         uses: actions/upload-artifact@v3
