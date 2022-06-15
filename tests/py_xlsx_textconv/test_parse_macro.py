@@ -18,8 +18,28 @@ Attribute Macro1.VB_ProcData.VB_Invoke_Func = " \\n14"\r
     Range("A1").Select\r
 End Sub\r
 
-
-[VBA filename]	ThisWorkbook\r
+[VBA filename]\tThisWorkbook
 Attribute VB_Name = "ThisWorkbook"\r
 Attribute VB_Base = "0{00020819-0000-0000-C000-000000000046}"\r
+Attribute VB_GlobalNameSpace = False\r
+Attribute VB_Creatable = False\r
+Attribute VB_PredeclaredId = True\r
+Attribute VB_Exposed = True\r
+Attribute VB_TemplateDerived = False\r
+Attribute VB_Customizable = True\r
+Option Explicit\r
+\r
+
+[VBA filename]\tSheet1
+Attribute VB_Name = "Sheet1"\r
+Attribute VB_Base = "0{00020820-0000-0000-C000-000000000046}"\r
+Attribute VB_GlobalNameSpace = False\r
+Attribute VB_Creatable = False\r
+Attribute VB_PredeclaredId = True\r
+Attribute VB_Exposed = True\r
+Attribute VB_TemplateDerived = False\r
+Attribute VB_Customizable = True\r
+Option Explicit\r
+\r
+
 '''

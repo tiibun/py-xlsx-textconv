@@ -51,20 +51,11 @@ Append to `~/.gitconfig` (Windows: %HOMEPATH%\.gitconfig).
 
 ## Development
 
+Install [pdm](https://pdm.fming.dev/latest/).
+
 ```
-git clone https://github.com/tiibun/py-xlsx-textconv.git
-cd py-xlsx-textconv
-# virtual env
-python -m venv env
-. ./env/Scripts/activate
-# install editable
-pip install -e .
-...develop
-# package
-rm -rf dist/*
-python -m build
-# upload
-twine upload dist/*
+# test
+pdm run test
 ```
 
 ## LICENSE
