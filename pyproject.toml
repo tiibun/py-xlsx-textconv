@@ -54,8 +54,7 @@ tox = "tox"
 publish = "hatch publish"
 
 [tool.pytest.ini_options]
-minversion = "6.0"
-addopts = "-ra -q"
 testpaths = [
     "tests",
 ]
+addopts = "--juni-xml=junit.xml"

@@ -21,14 +21,11 @@ jobs:
       - name: Run Tests
         run: |
           pdm run -v test
-
-      - name: Upload pytest test results
-        uses: actions/upload-artifact@v3
+      - name: Publish Test Report
+        uses: mikepenz/action-junit-report@v3
+        if: always() # always run even if the previous step fails
         with:
-          name: pytest-results-${{ matrix.python-version }}
-          path: junit/test-results-${{ matrix.python-version }}.xml
-        # Use always() to always run this step to publish test results when there are test failures
-        if: ${{ always() }}
+          report_paths: junit.xml
 
       - name: Build
         run: |
