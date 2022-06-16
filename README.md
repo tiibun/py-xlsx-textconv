@@ -54,6 +54,9 @@ Append to `~/.gitconfig` (Windows: %HOMEPATH%\.gitconfig).
 Install [pdm](https://pdm.fming.dev/latest/).
 
 ```
+# install dependencies
+pdm sync -d
+
 # test
 pdm run test
 ```
