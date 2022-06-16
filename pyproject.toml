@@ -57,4 +57,4 @@ publish = "hatch publish"
 testpaths = [
     "tests",
 ]
-addopts = "--juni-xml=junit.xml"
+addopts = "--junit-xml=junit.xml"
