@@ -18,11 +18,15 @@ Example: Excel
 git diff  
 ![git diff](https://raw.githubusercontent.com/tiibun/py-xlsx-textconv/main/diff.png)
 
+
+And experimental VBA support. (v0.0.4)
+
 ## This does not compare
 
 - Style
 - Auto Shapes
 - ... and so on
+
 
 ## Install 
 
