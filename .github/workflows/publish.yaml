@@ -4,13 +4,13 @@ on:
 
 jobs:
   publish:
-   runs-on: ubuntu-latest
-   steps:
+    runs-on: ubuntu-latest
+    steps:
       - uses: actions/checkout@v3
       - name: Set up PDM
         uses: pdm-project/setup-pdm@main
         with:
-          python-version: ${{ matrix.python-version }}
+          python-version: 3.7
       - name: Install dependencies
         run: |
           pdm sync -d
