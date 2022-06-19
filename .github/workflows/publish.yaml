@@ -4,7 +4,8 @@ on:
 
 jobs:
   publish:
-    steps:
+   runs-on: ubuntu-latest
+   steps:
       - name: Publish a Python distribution to PyPI
         uses: pypa/gh-action-pypi-publish@release/v1
         with:
