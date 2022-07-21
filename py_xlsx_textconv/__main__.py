@@ -1,4 +1,5 @@
 import argparse
+import os
 from . import __version__
 from .convert import convert
 
@@ -13,7 +14,8 @@ def main():
     args = parser.parse_args()
 
     filename = args.filename
-    convert(filename)
+    if os.path.isfile(filename):
+        convert(filename)
 
 
 if __name__ == '__main__':

@@ -31,6 +31,7 @@ Repository = "https://github.com/tiibun/py-xlsx-textconv"
 [project.scripts]
 py-xlsx-textconv = "py_xlsx_textconv.__main__:main"
 
+[project.optional-dependencies]
 [build-system]
 requires = ["pdm-pep517"]
 build-backend = "pdm.pep517.api"
@@ -45,7 +46,9 @@ dev = [
     "tox>=3.25.0",
     "yapf>=0.32.0",
     "tox-pdm>=0.3.1",
-    "hatch>=0.23.1"]
+    "hatch>=0.23.1",
+    "mypy>=0.971",
+]
 
 [tool.pdm.scripts]
 lint = "yapf -i -r py_xlsx_textconv"
