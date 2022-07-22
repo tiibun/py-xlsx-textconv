@@ -3,10 +3,8 @@ name = "py-xlsx-textconv"
 description = "Git textconv tool for excel"
 readme = "README.md"
 requires-python = ">=3.7"
-license = {file = "LICENSE"}
-authors = [
-    {name = "IIBUN Toshiyuki", email = "toshiyuki.iibun@gmail.com"}
-]
+license = { file = "LICENSE" }
+authors = [{ name = "IIBUN Toshiyuki", email = "toshiyuki.iibun@gmail.com" }]
 classifiers = [
     "Development Status :: 3 - Alpha",
     "Programming Language :: Python :: 3",
@@ -15,15 +13,10 @@ classifiers = [
     "Programming Language :: Python :: 3.9",
     "Programming Language :: Python :: 3.10",
     "License :: OSI Approved :: MIT License",
-    "Operating System :: OS Independent"
+    "Operating System :: OS Independent",
 ]
-dependencies = [
-    "openpyxl==3.0.*",
-    "oletools==0.60.*",
-]
-dynamic = [
-    "version"
-]
+dependencies = ["openpyxl==3.0.*", "oletools==0.60.*"]
+dynamic = ["version"]
 
 [project.urls]
 Repository = "https://github.com/tiibun/py-xlsx-textconv"
@@ -38,7 +31,7 @@ build-backend = "pdm.pep517.api"
 
 [tool]
 [tool.pdm]
-version = {from = "py_xlsx_textconv/__init__.py"}
+version = { from = "py_xlsx_textconv/__init__.py" }
 
 [tool.pdm.dev-dependencies]
 dev = [
@@ -48,16 +41,15 @@ dev = [
     "tox-pdm>=0.3.1",
     "hatch>=0.23.1",
     "mypy>=0.971",
+    "pytest-cov>=3.0.0",
 ]
 
 [tool.pdm.scripts]
 lint = "yapf -i -r py_xlsx_textconv"
-test = "pytest"
+test = "pytest --cov py_xlsx_textconv --cov-report=term --cov-report=xml"
 tox = "tox"
 publish = "hatch publish"
 
 [tool.pytest.ini_options]
-testpaths = [
-    "tests",
-]
+testpaths = ["tests"]
 addopts = "--junit-xml=junit.xml"
