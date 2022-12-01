@@ -17,7 +17,7 @@ classifiers = [
 ]
 dependencies = [
     "openpyxl==3.0.*",
-    "oletools @ git+https://github.com/tiibun/oletools.git@detect_encoding",
+    "oletools>=0.60.1",
 ]
 dynamic = ["version"]
 
