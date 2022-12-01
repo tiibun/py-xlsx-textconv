@@ -45,6 +45,7 @@ dev = [
     "hatch>=0.23.1",
     "mypy>=0.971",
     "pytest-cov>=3.0.0",
+    "twine>=4.0.2",
 ]
 
 [tool.pdm.scripts]
