@@ -10,5 +10,5 @@ stdout = open(sys.__stdout__.fileno(),
               closefd=False)
 
 
-def output(values: any):
+def output(values):
     print(values, file=stdout)

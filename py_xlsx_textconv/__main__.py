@@ -7,6 +7,8 @@ from .convert import convert
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('filename', help='excel filename')
+    parser.add_argument('--data', '-d',
+                        action='store_true')
     parser.add_argument('-v',
                         '--version',
                         action='version',
@@ -15,7 +17,7 @@ def main():
 
     filename = args.filename
     if os.path.isfile(filename):
-        convert(filename)
+        convert(filename, args.data)
 
 
 if __name__ == '__main__':

@@ -15,7 +15,10 @@ classifiers = [
     "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
 ]
-dependencies = ["openpyxl==3.0.*", "oletools==0.60.*"]
+dependencies = [
+    "openpyxl==3.0.*",
+    "oletools @ git+https://github.com/tiibun/oletools.git@detect_encoding",
+]
 dynamic = ["version"]
 
 [project.urls]

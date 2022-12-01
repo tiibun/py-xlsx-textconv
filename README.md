@@ -53,6 +53,15 @@ Append to `~/.gitconfig` (Windows: %HOMEPATH%\.gitconfig).
     textconv = py-xlsx-textconv
 ```
 
+If you would like to compare values only, append `-d` option.
+
+```:~/.gitconfig
+[diff "xlsx"]
+    binary = true
+    textconv = py-xlsx-textconv -d
+```
+
+
 ## Development
 
 Install [pdm](https://pdm.fming.dev/latest/).

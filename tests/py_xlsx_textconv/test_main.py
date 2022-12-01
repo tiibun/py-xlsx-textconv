@@ -8,7 +8,7 @@ def test_main():
     with patch('sys.argv', ['', filename]):
         with patch('py_xlsx_textconv.__main__.convert', Mock()) as mock:
             main()
-        mock.assert_called_once_with(filename)
+        mock.assert_called_once_with(filename, False)
 
 
 def test_main_no_exists():

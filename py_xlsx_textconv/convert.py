@@ -1,13 +1,15 @@
 import warnings
 import openpyxl
+from openpyxl import Workbook
+from openpyxl.cell.cell import Cell
 
 from py_xlsx_textconv.output import output
 from .parse_macro import parse_macro
 
 
-def convert(filename):
+def convert(filename: str, data_only: bool = True):
     warnings.simplefilter('ignore')
-    workbook = openpyxl.open(filename, read_only=True, data_only=True)
+    workbook: Workbook = openpyxl.open(filename, read_only=True, data_only=data_only)
     for ws in workbook:
         ws_name = f'[{ws.title}]'
         has_rows = False
