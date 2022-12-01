@@ -8,7 +8,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Set up PDM
-        uses: pdm-project/setup-pdm@main
+        uses: pdm-project/setup-pdm@v3
         with:
           python-version: 3.7
       - name: Install dependencies
