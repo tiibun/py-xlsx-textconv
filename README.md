@@ -50,7 +50,7 @@ Append to `~/.gitconfig` (Windows: %HOMEPATH%\.gitconfig).
 ```:~/.gitconfig
 [diff "xlsx"]
     binary = true
-    textconv = py-xlsx-textconv
+    textconv = PYTHONUTF8=1 py-xlsx-textconv
 ```
 
 If you would like to compare values only, append `-d` option.
@@ -58,7 +58,7 @@ If you would like to compare values only, append `-d` option.
 ```:~/.gitconfig
 [diff "xlsx"]
     binary = true
-    textconv = py-xlsx-textconv -d
+    textconv = PYTHONUTF8=1 py-xlsx-textconv -d
 ```
 
 

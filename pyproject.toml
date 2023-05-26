@@ -29,8 +29,8 @@ py-xlsx-textconv = "py_xlsx_textconv.__main__:main"
 
 [project.optional-dependencies]
 [build-system]
-requires = ["pdm-pep517"]
-build-backend = "pdm.pep517.api"
+requires = ["pdm-backend"]
+build-backend = "pdm.backend"
 
 [tool]
 [tool.pdm]
